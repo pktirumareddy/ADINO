@@ -6,4 +6,5 @@ import com.eznite.adino.dto.StandardResponseDTO;
 public interface ResponseEntityService {
 	StandardResponseDTO<ResponseDTO> getStaticSuccessResponse();
 	ResponseDTO getStaticErrorResponse();
+	ResponseDTO getCustomException();
 }
