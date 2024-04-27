@@ -5,9 +5,9 @@ import org.apache.logging.log4j.Logger;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.eznite.adino.dto.PayloadDTO;
 import com.eznite.adino.dto.ResponseDTO;
@@ -15,7 +15,9 @@ import com.eznite.adino.dto.StandardResponseDTO;
 import com.eznite.adino.service.ResponseEntityService;
 import com.eznite.adino.util.CommonUtils;
 
-@Controller
+import jakarta.validation.Valid;
+
+@RestController
 public class ResponseEntityController {
 	
 	private static final Logger logger = LogManager.getLogger(ResponseEntityController.class);
@@ -27,7 +29,7 @@ public class ResponseEntityController {
 	}
 
 	@PostMapping("/standardResponse")
-	public ResponseEntity<StandardResponseDTO<ResponseDTO>> getStandardResponse(@RequestBody PayloadDTO payloadDTO) {
+	public ResponseEntity<StandardResponseDTO<ResponseDTO>> getStandardResponse(@Valid @RequestBody PayloadDTO payloadDTO) {
 		logger.info("payloadDTO = "+payloadDTO);
 		try {
 			if (payloadDTO.isStatus()) {
@@ -57,7 +59,7 @@ public class ResponseEntityController {
 	}
 	
 	@PostMapping("/wildCardResponse")
-	public ResponseEntity<?> getWildCardResponse(@RequestBody PayloadDTO payloadDTO) {
+	public ResponseEntity<?> getWildCardResponse(@Valid @RequestBody PayloadDTO payloadDTO) {
 		logger.info("payloadDTO = "+payloadDTO);
 		if (payloadDTO.isStatus()) {
 			HttpHeaders headers = new HttpHeaders();

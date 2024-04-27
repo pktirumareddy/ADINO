@@ -9,7 +9,7 @@
 	<appender name="ROLLING_FILE"
 		class="ch.qos.logback.core.rolling.RollingFileAppender">
 		<file>
-			logs/logs.log
+			E:/Eznite-Adino-Logs/logs.log
 		</file>
 		<encoder>
 			<pattern>${LOG_PATTERN}</pattern>
@@ -17,7 +17,7 @@
 		<rollingPolicy
 			class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
 			<fileNamePattern>
-				logs/archived/logs-%d{yyyy-MM-dd}.log</fileNamePattern>
+				E:/Eznite-Adino-Logs/archived/logs-%d{yyyy-MM-dd}.log</fileNamePattern>
 		</rollingPolicy>
 
 	</appender>
