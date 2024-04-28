@@ -7,6 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.eznite.adino.dto.PayloadDTO;
@@ -18,6 +19,7 @@ import com.eznite.adino.util.CommonUtils;
 import jakarta.validation.Valid;
 
 @RestController
+@RequestMapping("/admin")
 public class ResponseEntityController {
 	
 	private static final Logger logger = LogManager.getLogger(ResponseEntityController.class);
