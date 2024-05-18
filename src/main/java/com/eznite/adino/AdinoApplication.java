@@ -9,5 +9,4 @@ public class AdinoApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(AdinoApplication.class, args);
 	}
-
 }
